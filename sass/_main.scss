@@ -1,0 +1,133 @@
+$primary: #219ebc;
+$mainColor: #d73e0f;
+
+.hero-section {
+    padding-top: 25px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.hellow-text {
+    color: $mainColor;
+}
+
+.hero-btn-resume {
+    background-color: $mainColor;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($mainColor, 10%);
+    }
+}
+
+.hero-btn-quote {
+    background-color: $primary;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary, 10%);
+    }
+}
+
+.text-underline {
+    background-color: $mainColor;
+}
+
+.home-contact-section {
+    background-image: url('../public/assets/images/bg3.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 65vh;
+    border-radius: 5px;
+
+}
+
+.contact-overlay {
+    background-color: rgba(46, 46, 46, 0.7);
+    min-height: 65vh;
+    border-radius: 5px;
+}
+
+.build-text {
+    color: $primary;
+}
+
+.btn-default {
+    background-color: $primary;
+    color: white;
+    padding: 8px 16px 9px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 3px solid $primary;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        margin-top: 65px;
+        padding-top: 25px;
+    }
+
+
+
+}
+
+
+
+.project-img {
+    position: relative;
+    overflow: hidden;
+  
+    .group-hover-image {
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    &:hover .group-hover-image {
+      transform: scale(1.02);
+    }
+  
+    .overlay {
+      position: absolute;
+      bottom: -100%; // Initially off-screen
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      transition: bottom 0.5s ease-in-out;
+    }
+  
+    &:hover .overlay {
+      bottom: 0; // Slides into view
+    }
+  
+    .text-content {
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  
+    &:hover .text-content {
+      opacity: 1; // Fade in text
+    }
+  }
+  
+  
