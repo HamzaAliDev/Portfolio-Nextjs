@@ -69,14 +69,14 @@ export default function Navbar() {
                             </li>
                             <li className="nav-item ">
 
-                                <div className='header_btn'>
+                                <Link href='contact' className='header_btn'>
                                     Hire me
                                     <div className='header_container__6am1c'>
                                         <div className='header-dot1'></div>
                                         <div className='header-dot2'></div>
                                         <div className='header-dot3'></div>
                                     </div>
-                                </div>
+                                </Link>
                             </li>
                         </ul>
                     </div>

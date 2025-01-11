@@ -12,14 +12,15 @@ import project3 from "../public/assets/images/project3.png";
 import project4 from "../public/assets/images/project4.png";
 import project5 from "../public/assets/images/project5.png";
 import project6 from "../public/assets/images/project6.png";
+import Contact from "../components/Contact";
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '500'], 
+  weight: ['400', '500'],
 });
 const rubik = Rubik({
-  subsets: ['latin'], 
-  weight: ['500'], 
+  subsets: ['latin'],
+  weight: ['500'],
 });
 
 const raleway = Raleway({
@@ -29,28 +30,29 @@ const raleway = Raleway({
 export default function Home() {
   return (
     <>
-    {/* hero section */}
+      {/* hero section */}
       <section>
         <div className="flex  items-center justify-center  bg-gray-100 hero-section">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4  md:space-y-0">
             {/* Left section (text + buttons) */}
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center space-y-8 lg:px-20">
               <p className={`text-xl hellow-text ${rubik.className}`}>Hello!</p>
-              <h1 className={`text-6xl font-semibold text-center md:text-left ${rubik.className}`}>I'm {' '}
-                <span >
-                  {/* Style will be inherited from the parent element */}
-                  <Typewriter
-                    words={['Ali Hamza', 'a Developer']}
-                    loop={Infinity}
-                    cursor
-                    // cursorStyle='_'
-                    typeSpeed={90}
-                    deleteSpeed={80}
-                    delaySpeed={3000}
-                    cursorColor="#d73e0f"
-                  />
-                </span>
-              </h1>
+              <h1 className={`text-6xl font-semibold text-center md:text-left ${rubik.className}`}>I'm Ali Hamza</h1>
+              <p className="type-writer-text text-xl">
+                <i>
+                <Typewriter
+                  words={['MERN Stack Developer', 'UI / UX Designer', 'Android App Developer']}
+                  loop={Infinity}
+                  cursor
+                  // cursorStyle='_'
+                  typeSpeed={90}
+                  deleteSpeed={80}
+                  delaySpeed={3000}
+                  cursorColor="#d73e0f"
+                />
+                </i>
+              </p>
+
               <p className={`text-lg text-center md:text-left ${roboto.className}`}>
                 I design and develop impactful web and mobile solutions with a focus on seamless user experiences and user-centric design.
               </p>
@@ -102,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-    {/* highlight section */}
+      {/* highlight section */}
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 lg:px-24">
           {/* Title */}
@@ -143,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-    {/* project section */}
+      {/* project section */}
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 lg:px-24">
           {/* Title */}
@@ -283,36 +285,9 @@ export default function Home() {
         </div>
       </section>
 
-    {/* contact section */}
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 lg:px-24">
-          {/* Title */}
-          <h2 className={`text-3xl font-bold mb-6 relative group ${raleway.className}`}>
-            Contact Me
-            <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-40"></span>
-          </h2>
+      {/* contact section */}
+      <Contact titlePre={"Let's "} highlight={"Build"} titlePost={" Something Amazing Together."} />
 
-          <div className="home-contact-section">
-            <div className="contact-overlay flex items-center justify-center flex-col space-y-6 lg:px-16 px-4">
-              {/* Title and Call to Action */}
-              <h2 className={`text-5xl font-extrabold mb-6 text-center text-white ${raleway.className}`}>
-                Let's <span className="font-extrabold build-text">Build</span> Something Amazing Together.
-              </h2>
-
-              <div className="mt-6">
-                <button className="relative text-xl font-semibold btn-default flex items-center justify-center overflow-hidden group">
-                  <span className="absolute inset-0 bg-gray-100 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
-                  <span className="relative z-10 group-hover:text-customprimary transition-colors duration-500 ease-in-out">
-                    Contact Me
-                  </span>
-                  <FaArrowRight className="ms-2 mt-1 transform -rotate-45 transition-transform duration-500 ease-in-out group-hover:rotate-0  group-hover:text-customprimary  relative z-10" />
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
