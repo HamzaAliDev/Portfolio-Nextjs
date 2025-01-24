@@ -1,6 +1,14 @@
 "use client";
-import { FaBootstrap, FaBrain, FaChartLine, FaCode, FaCss3Alt, FaGithub, FaHtml5, FaLaptopCode, FaNodeJs, FaPaintBrush, FaPython, FaReact, FaSass } from 'react-icons/fa'
-import { Raleway } from '@next/font/google';
+
+import Link from 'next/link';
+import { Raleway, Roboto } from '@next/font/google';
+import { HiPaintBrush } from 'react-icons/hi2';
+import { IoDesktopOutline } from 'react-icons/io5';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { RiFirebaseFill, RiNextjsFill } from 'react-icons/ri';
+import { SiAntdesign, SiCplusplus, SiExpress, SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { FaBootstrap, FaBrain, FaCss3Alt, FaGithub, FaHtml5, FaLaptopCode, FaNodeJs, FaPython, FaReact, FaSass } from 'react-icons/fa'
+import { TbBrandJavascript, TbBrandReactNative, TbDeviceMobileCode, TbSettingsCode } from 'react-icons/tb';
 import blob1 from '../../public/assets/images/blob1.png';
 import blob2 from '../../public/assets/images/blob2.png';
 import blob3 from '../../public/assets/images/blob3.png';
@@ -10,14 +18,6 @@ import blob6 from '../../public/assets/images/blob6.png';
 import aboutImg from '../../public/assets/images/servicesPic.png';
 import chooseImg from '../../public/assets/images/choose.png';
 
-import { TbBrandJavascript, TbBrandReactNative, TbDeviceMobileCode, TbSettingsCode } from 'react-icons/tb';
-import { HiPaintBrush } from 'react-icons/hi2';
-import { IoDesktopOutline } from 'react-icons/io5';
-import Link from 'next/link';
-import { Roboto } from 'next/font/google';
-import { SiAntdesign, SiCplusplus, SiExpress, SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si';
-import { RiFirebaseFill, RiNextjsFill } from 'react-icons/ri';
-import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -111,17 +111,13 @@ export default function Services() {
           <section className=" py-10">
             <div className="container mx-auto px-4 lg:px-24">
               {/* Title */}
-              <h2 className={`text-3xl mt-5 font-bold mb-6 relative group ${raleway.className}`}>
+              <h2 className={`text-3xl mt-5 font-bold mb-10 inline-block relative group ${raleway.className}`}>
                 What I Offer
                 <span className="text-underline ms-1 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-44"></span>
               </h2>
 
-              <div className='px-6 m-6'>
-
-              </div>
-
               {/* Highlights List */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  ${roboto.className}`}>
                 {
                   data.map((item, index) => {
                     return (
@@ -132,7 +128,7 @@ export default function Services() {
                           </div>
 
                         </div>
-                        <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                        <h3 className="text-lg font-medium mb-2">{item.title}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </div>
                     );
@@ -146,7 +142,7 @@ export default function Services() {
           {/* tools and Technologies section */}
           <section className=' py-10'>
             <div className='container mx-auto px-4 lg:px-24'>
-              <h2 className={`text-3xl mt-5 font-bold mb-6 relative group ${raleway.className}`}>
+              <h2 className={`text-3xl mt-5 font-bold  inline-block relative group ${raleway.className}`}>
                 Tools & Technologies
                 <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-72"></span>
               </h2>
@@ -213,12 +209,12 @@ export default function Services() {
           <section className="bg-gray-100 py-10">
             <div className="container mx-auto px-4 lg:px-24">
               {/* Title */}
-              <h2 className={`text-3xl font-bold mb-6 relative group ${raleway.className}`}>
+              <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
                 Why Choose me ?
                 <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-60"></span>
               </h2>
 
-              <div className='flex align-center justify-around choose-section bg-gray-700'>
+              <div className={`flex align-center justify-around choose-section bg-gray-700  ${roboto.className}`}>
                 <div className=" flex flex-col p-6 justify-center gap-2">
                   <div className='flex align-center '>
                     <div className='bullet-point text-white'>

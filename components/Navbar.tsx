@@ -30,9 +30,9 @@ export default function Navbar() {
                         onClick={toggleMenu}
                     >
                         {isMenuOpen ? (
-                            <FaTimes className="text-2xl" /> // Close icon
+                            <FaTimes className="text-2xl" /> 
                         ) : (
-                            <FaBars className="text-2xl" /> // Menu icon
+                            <FaBars className="text-2xl" /> 
                         )}
                     </button>
 

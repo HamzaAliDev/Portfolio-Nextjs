@@ -119,3 +119,10 @@ ul {
     z-index: 10;
    
 }
+
+@media (max-width: 560px) {
+    .social-icons-container{
+        width: 100%;
+    }
+    
+}

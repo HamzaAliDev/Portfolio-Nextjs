@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import profilePic from "../public/assets/images/profile-bg-reomve.png";
 import { Roboto, Rubik, Raleway } from '@next/font/google';
-import { FaCode, FaPaintBrush, FaChartLine, FaArrowRight, FaEye } from "react-icons/fa";
+import { FaCode, FaPaintBrush, FaChartLine, FaEye } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter'
+import profilePic from "../public/assets/images/profile-bg-reomve.png";
 import project2 from "../public/assets/images/project2.png";
 import project1 from "../public/assets/images/project1.png";
 import project3 from "../public/assets/images/project3.png";
@@ -108,19 +108,19 @@ export default function Home() {
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 lg:px-24">
           {/* Title */}
-          <h2 className={`text-3xl font-bold mb-6 relative group ${raleway.className}`}>
+          <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
             What I Do Best
             <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-52"></span>
           </h2>
 
           {/* Highlights List */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${roboto.className}`}>
             {/* Highlight 1 */}
             <div className="bg-white shadow-lg rounded-lg p-7 flex flex-col items-center text-center">
               <div className="text-blue-500 text-5xl mb-4">
                 <FaCode />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Web and Mobile App Development</h3>
+              <h3 className="text-xl font-medium mb-2">Web and Mobile App Development</h3>
               <p className="text-gray-600">Developing high-quality web and mobile applications tailored to meet the specific needs of users</p>
             </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
               <div className="text-green-500 text-5xl mb-4">
                 <FaPaintBrush />
               </div>
-              <h3 className="text-lg font-semibold mb-2">User-Centric Designs</h3>
+              <h3 className="text-xl font-medium mb-2">User-Centric Designs</h3>
               <p className="text-gray-600">Designing intuitive and seamless user interfaces that prioritize delivering smooth and effortless interactions</p>
             </div>
 
@@ -138,7 +138,7 @@ export default function Home() {
               <div className="text-yellow-500 text-5xl mb-4">
                 <FaChartLine />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Impactful Solutions</h3>
+              <h3 className="text-xl font-medium mb-2">Impactful Solutions</h3>
               <p className="text-gray-600">create digital solutions that help solve complex problems, increase efficiency, and enhance user satisfaction,</p>
             </div>
           </div>
@@ -149,9 +149,9 @@ export default function Home() {
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 lg:px-24">
           {/* Title */}
-          <h2 className={`text-3xl font-bold mb-6 relative group ${raleway.className}`}>
-            Recent Projects
-            <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-52"></span>
+          <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
+          Archived Projects
+            <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-60"></span>
           </h2>
           <div className="flex flex-wrap">
             {/* Left Column (col-md-4) */}
@@ -188,7 +188,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://foodhub-hotel.web.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>

@@ -1,10 +1,9 @@
 
+import Link from 'next/link';
+import { FaBookOpen } from 'react-icons/fa';
 import { Roboto, Raleway } from '@next/font/google';
 import aboutImg from '../../public/assets/images/about pic.png';
 import missionImg from '../../public/assets/images/mission.png';
-
-import Link from 'next/link';
-import { FaBook, FaBookOpen } from 'react-icons/fa';
 import Contact from '@/components/Contact';
 
 const roboto = Roboto({
@@ -53,12 +52,12 @@ export default function About() {
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 lg:px-24">
           {/* Title */}
-          <h2 className={`text-3xl font-bold mb-6 relative group ${raleway.className}`}>
+          <h2 className={`text-3xl font-bold mb-6 inline-block relative group ${raleway.className}`}>
             Resume
             <span className="text-underline ms-1 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-28"></span>
           </h2>
 
-          <article className="resume bg-gray-50 p-6 rounded-lg shadow-lg">
+          <article className={`resume bg-gray-50 p-6 rounded-lg shadow-lg ${raleway.className}`}>
             <section className="timeline">
               <div className="title-wrapper flex items-center gap-2 ">
                 <div className="icon-box bg-customprimary text-white p-2 rounded-full">
@@ -106,8 +105,7 @@ export default function About() {
         </div>
       </section>
 
-
-
+      {/* Vision & Mission section */}
       <section>
         <div className="bg-gray-100 py-16">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
