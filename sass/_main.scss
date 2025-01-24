@@ -64,10 +64,6 @@ $mainColor: #d73e0f;
     border-radius: 5px;
 }
 
-.build-text {
-    color: $primary;
-}
-
 .btn-default {
     background-color: $primary;
     color: white;
@@ -79,22 +75,13 @@ $mainColor: #d73e0f;
 }
 
 
-
-
-
-
-
-
 @media (max-width: 768px) {
     .hero-section {
         margin-top: 65px;
         padding-top: 25px;
     }
 
-
-
 }
-
 
 
 .project-img {
@@ -133,9 +120,6 @@ $mainColor: #d73e0f;
         opacity: 1; // Fade in text
     }
 }
-
-
-
 
 
 
@@ -189,77 +173,6 @@ $mainColor: #d73e0f;
             /* Adjust this to fine-tune text alignment */
         }
     }
-}
-
-
-
-.blob-background-container {
-    width: 110px;
-    height: 110px;
-}
-
-.blob-background {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-.tool-card {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 65px;
-    transition: transform 0.3s ease, border 0.3s ease;
-
-    &:hover {
-        transform: scale(1.1); // Slightly zoom in
-        border: 3px solid rgba(33, 158, 188, 0.4); // Border appears
-    }
-
-}
-
-@media (max-width: 380px) {
-    .tool-card {
-        width: 65px;
-        height: 65px;
-        font-size: 35px;
-    }
-}
-
-
-.choose-section {
-    min-height: 65vh;
-    border-radius: 5px;
-}
-
-.bullet-point {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: $mainColor;
-}
-
-@media (max-width: 786px) {
-    .choose-img-container {
-        display: none;
-    }
-
-}
-
-@media (max-width: 380px) {
-    .choose-img-container {
-        display: none;
-    }
-
 }
 
 
@@ -363,9 +276,6 @@ $mainColor: #d73e0f;
 
 
 
-
-
-
 .metrics{
     height: 160px;
     width: 170px;
@@ -383,75 +293,6 @@ $mainColor: #d73e0f;
     color: $mainColor;
     letter-spacing: 1px;
 }
-
-// .project-card{
-//     width: 300px;
-//     border-radius: 10px;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-// }
-// .project-card-img{
-//     width: 100%;
-//     height: 200px;
-//     object-fit: contain;
-//     border-radius: 10px;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: right;
-    
-// }
-
-// .project-card-content{
-//     position: relative;
-//     padding: 15px;
-//     background-color: #fff;
-//     margin-top: -20px;
-//     border-radius: 10px
-// }
-
-
-// .project-btn{
-//     margin-top: 15px;
-//     background-color: $mainColor;
-//     color: white;
-//     padding: 3px 16px 4px;
-//     border-radius: 5px;
-//     text-decoration: none;
-//     transition: background-color 0.3s ease;
-//     font-size: 15px;
-//     // border: 3px solid $mainColor;
-// }
-
-// .card-icon-container{
-//     position: absolute;
-//     // top: 0;
-//     bottom: 0;
-//     width: 50px;
-//     height: 50px;
-//     border-radius: 50%;
-//     background-color: #101010;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     // transition: transform 0.3s ease, border 0.3s ease;
-
-//     // &:hover {
-//     //     transform: scale(1.1); // Slightly zoom in
-//     //     // border: 3px solid rgba(33, 158, 188, 0.4); // Border appears
-//     // }
-// }
-
-// .card-icon{
-//     width: 40px;
-//     height: 40px;
-//     border-radius: 50%;
-//     background-color: #fff;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-   
-
-// }
 
 
 .project-card {
@@ -506,9 +347,6 @@ $mainColor: #d73e0f;
     align-items: center;
   }
   
-  
-
-
 
   .techstack-badge{
     margin: 3px;

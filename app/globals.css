@@ -2,6 +2,7 @@
 @import'../sass/_main.scss';
 @import'../sass/_footer.scss';
 @import'../sass/_loader.scss';
+@import'../sass/_servicePage.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
