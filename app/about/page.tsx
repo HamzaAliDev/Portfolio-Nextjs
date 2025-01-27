@@ -1,4 +1,6 @@
-
+"use client";
+import { useEffect } from 'react';
+import AOS from 'aos';
 import Link from 'next/link';
 import { FaBookOpen } from 'react-icons/fa';
 import { Roboto, Raleway } from '@next/font/google';
@@ -15,11 +17,14 @@ const raleway = Raleway({
 });
 
 export default function About() {
+    useEffect(() => {
+      AOS.init();
+    }, []);
   return (
     <>
       {/* hero section */}
       <section>
-        <div className="flex  items-center justify-center  bg-gray-100 hero-section">
+        <div data-aos="fade-up" className="flex  items-center justify-center  bg-gray-100 hero-section">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
             {/* Left section (text + buttons) */}
             <div className="w-full md:w-1/2 mt-4 flex flex-col items-center md:items-start justify-center space-y-6 lg:px-20">
@@ -50,7 +55,7 @@ export default function About() {
       </section>
 
       <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 lg:px-24">
+        <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
           {/* Title */}
           <h2 className={`text-3xl font-bold mb-6 inline-block relative group ${raleway.className}`}>
             Resume
@@ -106,8 +111,8 @@ export default function About() {
       </section>
 
       {/* Vision & Mission section */}
-      <section>
-        <div className="bg-gray-100 py-16">
+      <section className="bg-gray-100">
+        <div data-aos="fade-up" className="bg-gray-100 py-16">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
             {/* Right section (image with SVG background) */}
             <div className="w-full md:w-1/2 flex justify-center items-center relative">

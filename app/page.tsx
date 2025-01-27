@@ -1,9 +1,12 @@
 "use client"
 
+import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Image from "next/image";
 import Link from "next/link";
 import { Roboto, Rubik, Raleway } from '@next/font/google';
-import { FaCode, FaPaintBrush, FaChartLine, FaEye } from "react-icons/fa";
+import { FaCode, FaPaintBrush, FaChartLine, FaEye, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter'
 import profilePic from "../public/assets/images/profile-bg-reomve.png";
 import project2 from "../public/assets/images/project2.png";
@@ -13,6 +16,7 @@ import project4 from "../public/assets/images/project4.png";
 import project5 from "../public/assets/images/project5.png";
 import project6 from "../public/assets/images/project6.png";
 import Contact from "../components/Contact";
+import Modal from "@/components/Modal";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -27,12 +31,47 @@ const raleway = Raleway({
   subsets: ['latin'],
 });
 
+const randomQuotes = [
+  "Design is not just what it looks like, it's how it works. – Steve Jobs",
+  "Simplicity is the ultimate sophistication. – Leonardo da Vinci",
+  "The best way to predict the future is to invent it. – Alan Kay",
+  "Code is like humor. When you have to explain it, it’s bad. – Cory House",
+  "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
+  "Good code is its own best documentation. – Steve McConnell",
+  "Opportunities don't happen. You create them. – Chris Grosser",
+  "The only way to do great work is to love what you do. – Steve Jobs",
+  "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+  "If you can change your mind, you can change your life. – William James",
+  "Make each day your masterpiece. – John Wooden",
+  "Be so good they can't ignore you. – Steve Martin",
+  "Success is a Journey, Not a Destination. – Ben Sweetland",
+];
+
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+  const [quote, setQuote] = useState<string | null>(null);
+  const [author, setAuthor] = useState<string | null>(null);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  const getRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * randomQuotes.length);
+    const selectedQuote = randomQuotes[randomIndex];
+
+    // Split the selected quote into quote text and author
+    const [quoteText, authorName] = selectedQuote.split(" – ");
+
+    setQuote(quoteText);
+    setAuthor(authorName);
+  };
+
   return (
     <>
       {/* hero section */}
       <section>
-        <div className="flex  items-center justify-center  bg-gray-100 hero-section">
+        <div data-aos="fade-up" className="flex  items-center justify-center  bg-gray-100 hero-section">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4  md:space-y-0">
             {/* Left section (text + buttons) */}
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center space-y-8 lg:px-20">
@@ -40,16 +79,16 @@ export default function Home() {
               <h1 className={`text-6xl font-semibold text-center md:text-left ${rubik.className}`}>I'm Ali Hamza</h1>
               <p className="type-writer-text text-xl">
                 <i>
-                <Typewriter
-                  words={['MERN Stack Developer', 'UI / UX Designer', 'Android App Developer']}
-                  loop={Infinity}
-                  cursor
-                  // cursorStyle='_'
-                  typeSpeed={90}
-                  deleteSpeed={80}
-                  delaySpeed={3000}
-                  cursorColor="#d73e0f"
-                />
+                  <Typewriter
+                    words={['MERN Stack Developer', 'UI / UX Designer', 'Android App Developer']}
+                    loop={Infinity}
+                    cursor
+                    // cursorStyle='_'
+                    typeSpeed={90}
+                    deleteSpeed={80}
+                    delaySpeed={3000}
+                    cursorColor="#d73e0f"
+                  />
                 </i>
               </p>
 
@@ -62,7 +101,11 @@ export default function Home() {
                     Download Resume
                   </button>
                 </Link>
-                <button className="hero-btn-quote text-white font-bold py-2 px-4 rounded">
+                <button className="hero-btn-quote text-white font-bold py-2 px-4 rounded"
+                  onClick={() => {
+                    getRandomQuote();
+                    setIsModalOpen(true);
+                  }}>
                   Get a Free Quote
                 </button>
               </div>
@@ -106,7 +149,7 @@ export default function Home() {
 
       {/* highlight section */}
       <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 lg:px-24">
+        <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
           {/* Title */}
           <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
             What I Do Best
@@ -147,10 +190,10 @@ export default function Home() {
 
       {/* project section */}
       <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 lg:px-24">
+        <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
           {/* Title */}
           <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
-          Archived Projects
+            Archived Projects
             <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-60"></span>
           </h2>
           <div className="flex flex-wrap">
@@ -287,6 +330,25 @@ export default function Home() {
 
       {/* contact section */}
       <Contact titlePre={"Let's "} highlight={"Build"} titlePost={" Something Amazing Together."} />
+
+      {/* modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Quote">
+        <div className="p-6 flex items-center justify-center space-x-4">
+          {quote ? (
+            <>
+              <FaQuoteLeft color="#d73e0f" size={40} />
+              <p className={`text-3xl font-normal text-center ${roboto.className}`}> {quote} </p>
+              <FaQuoteRight color="#d73e0f" size={40} />
+            </>
+          ) : (
+            <p className="text-xl font-medium text-center">Loading...</p>
+          )}
+        </div>
+          <p className="text-md text-center italic mt-2">- {author}</p>
+      </Modal>
 
     </>
   );

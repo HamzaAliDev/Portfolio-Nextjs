@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from 'react';
+import AOS from 'aos';
 import Link from 'next/link';
 import { Raleway, Roboto } from '@next/font/google';
 import { HiPaintBrush } from 'react-icons/hi2';
@@ -68,11 +70,14 @@ const data: ServiceItem[] = [{
 }
 ]
 export default function Services() {
+  useEffect(() => {
+        AOS.init();
+      }, []);
   return (
     <>
       {/* hero section */}
       <section>
-        <div className="flex  items-center justify-center  bg-gray-100 hero-section">
+        <div data-aos="fade-up" className="flex  items-center justify-center  bg-gray-100 hero-section">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
             {/* Left section (text + buttons) */}
             <div className="w-full md:w-1/2 mt-4 flex flex-col items-center md:items-start justify-center space-y-6 lg:px-20">
@@ -109,7 +114,7 @@ export default function Services() {
         <div className="container">
           {/* Services Section */}
           <section className=" py-10">
-            <div className="container mx-auto px-4 lg:px-24">
+            <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
               {/* Title */}
               <h2 className={`text-3xl mt-5 font-bold mb-10 inline-block relative group ${raleway.className}`}>
                 What I Offer
@@ -141,7 +146,7 @@ export default function Services() {
 
           {/* tools and Technologies section */}
           <section className=' py-10'>
-            <div className='container mx-auto px-4 lg:px-24'>
+            <div data-aos="zoom-in" className='container mx-auto px-4 lg:px-24'>
               <h2 className={`text-3xl mt-5 font-bold  inline-block relative group ${raleway.className}`}>
                 Tools & Technologies
                 <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-72"></span>
@@ -207,7 +212,7 @@ export default function Services() {
           </section>
 
           <section className="bg-gray-100 py-10">
-            <div className="container mx-auto px-4 lg:px-24">
+            <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
               {/* Title */}
               <h2 className={`text-3xl font-bold mb-10 inline-block relative group ${raleway.className}`}>
                 Why Choose me ?

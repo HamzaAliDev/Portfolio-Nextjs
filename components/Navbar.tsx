@@ -3,7 +3,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Roboto } from '@next/font/google';
 
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+});
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,7 +17,7 @@ export default function Navbar() {
     };
 
     return (
-        <header>
+        <header className={`${roboto.className}`}>
             <nav
                 className="navbar flex items-center justify-between shadow-md fixed w-full z-50 px-6 py-2 top-0 bg-white"
                 id="ftco-navbar"

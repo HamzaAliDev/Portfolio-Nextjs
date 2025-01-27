@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Raleway, Roboto } from "@next/font/google";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
+import AOS from 'aos';
 import CountUp from "react-countup";
 import projectPic from "../../public/assets/images/projectPic01.png";
 import project01 from "../../public/assets/images/proj01.jpg";
@@ -118,6 +119,10 @@ export default function Projects() {
     };
   }, []);
 
+   useEffect(() => {
+        AOS.init();
+      }, []);
+
 
   const handleCardClick = (project: {
     mtitle?: string;
@@ -140,7 +145,7 @@ export default function Projects() {
     <>
       {/* Hero Section */}
       <section>
-        <div className="flex items-center justify-center bg-gray-100 hero-section">
+        <div data-aos="fade-up" className="flex items-center justify-center bg-gray-100 hero-section">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
             {/* Left Section */}
             <div className="w-full md:w-1/2 mt-4 flex flex-col items-center md:items-start justify-center space-y-6 lg:px-20">
@@ -171,7 +176,7 @@ export default function Projects() {
 
       {/* project Cards */}
       <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4 lg:px-24">
+        <div data-aos="fade-up" className="container mx-auto px-4 lg:px-24">
           <h2 className={`text-3xl font-bold mb-2 inline-block relative group ${raleway.className}`}>
             Featured Projects
             <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded h-1 w-12 transition-all duration-500 group-hover:w-60"></span>
@@ -202,7 +207,7 @@ export default function Projects() {
 
       {/* Stats Metrics */}
       <section className="bg-gray-100 py-10" ref={countUpSectionRef}>
-        <div className="container mx-auto px-4 lg:px-24">
+        <div data-aos="zoom-in" className="container mx-auto px-4 lg:px-24">
           <div className="flex flex-wrap items-center justify-center">
             <div className="metrics m-5">
               {startCount && <CountUp end={24} duration={4} className="metric-text" />}

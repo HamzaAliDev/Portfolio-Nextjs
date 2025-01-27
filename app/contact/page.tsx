@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Raleway } from 'next/font/google';
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoIosMail } from 'react-icons/io'
@@ -7,6 +7,7 @@ import { IoCall } from 'react-icons/io5';
 import { collection, doc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { firestore } from '@/config/firebase';
 import { toast, Toaster } from 'sonner';
+import AOS from 'aos';
 import Loader from '@/components/Loader';
 
 const raleway = Raleway({
@@ -22,6 +23,10 @@ const initialState: ContactProps = { name: '', email: '', subject: '', message: 
 export default function Contact() {
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false); 
+
+   useEffect(() => {
+        AOS.init();
+      }, []);
 
   const handleChange = (e: any) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -84,7 +89,7 @@ export default function Contact() {
             Contact Me
             <span className="text-underline ms-1 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-40"></span>
           </h2>
-          <div className="flex flex-wrap justify-around lg:justify-around sm:justify-start items-center sm:content-start mt-10 gap-y-2 mb-10">
+          <div data-aos="fade-up" className="flex flex-wrap justify-around lg:justify-around sm:justify-start items-center sm:content-start mt-10 gap-y-2 mb-10">
             <div className="flex w-full sm:w-auto me-3">
               <div className="contact-icon-container">
                 <IoIosMail size={60} color="#d73e0f" />
@@ -120,7 +125,7 @@ export default function Contact() {
 
 
           {/* map and form section */}
-          <div className='container flex flex-wrap flex-col md:flex-row align-center justify-center '>
+          <div data-aos="fade-up" className='container flex flex-wrap flex-col md:flex-row align-center justify-center '>
             {/* google map */}
             <div className='w-full md:w-1/2 '>
               <iframe

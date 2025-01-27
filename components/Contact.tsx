@@ -15,7 +15,7 @@ export default function Contact({ titlePre, highlight, titlePost}: ContactProps)
 
     return (
         <section className="bg-gray-100 py-10">
-            <div className="container mx-auto px-4 lg:px-24">
+            <div data-aos="zoom-in-up" className="container mx-auto px-4 lg:px-24">
                 {/* Title */}
                 <h2 className={`text-3xl font-bold mb-6 relative inline-block group ${raleway.className}`}>
                     Contact Me
