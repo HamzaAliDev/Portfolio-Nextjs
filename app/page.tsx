@@ -96,7 +96,7 @@ export default function Home() {
                 I design and develop impactful web and mobile solutions with a focus on seamless user experiences and user-centric design.
               </p>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center md:justify-start ">
-                <Link href="/resume" passHref>
+                <Link href="/resume.pdf" download="Hamza_Resume.pdf" passHref>
                   <button className="hero-btn-resume text-white font-bold py-2 px-4 rounded">
                     Download Resume
                   </button>
