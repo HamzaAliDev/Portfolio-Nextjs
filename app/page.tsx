@@ -210,7 +210,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://hamza-tasklist-app.netlify.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>
@@ -253,7 +253,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://hamza-weather.netlify.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>
@@ -275,7 +275,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://hamza-tasklist.netlify.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>
@@ -296,7 +296,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://hamza-iphone.netlify.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>
@@ -317,7 +317,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="text text-center p-4 z-10 text-content">
                   <h3 className="text-white text-lg font-semibold">
-                    <a href="#">
+                    <a href="https://hamza-text-to-speech.netlify.app/" target="_blank" rel="noreferrer">
                       <FaEye size={30} />
                     </a>
                   </h3>

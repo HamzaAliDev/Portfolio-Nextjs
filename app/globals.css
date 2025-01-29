@@ -1,8 +1,8 @@
-@import'../sass/_navbar.scss';
-@import'../sass/_main.scss';
-@import'../sass/_footer.scss';
-@import'../sass/_loader.scss';
-@import'../sass/_servicePage.scss';
+/* @import'../sass/navbar';  */
+@import'../sass/main.scss';
+/* @import'../sass/footer'; */
+/* @import'../sass/loader'; */
+/* @import'../sass/servicePage'; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
