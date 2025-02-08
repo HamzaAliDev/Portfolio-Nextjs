@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from 'react';
 import AOS from 'aos';
-import Link from 'next/link';
 import { FaBookOpen } from 'react-icons/fa';
 import { Roboto, Raleway } from 'next/font/google';
 import aboutImg from '../../public/assets/images/about pic.png';
@@ -38,7 +37,7 @@ export default function About() {
                 combine functionality, aesthetics, and seamless user experiences. Problem-solving and transforming ideas into impactful designs are at the core of my passion.
               </p>
               <div className="">
-                <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <a href="/resume.pdf" target="_blank"  rel="noreferrer">
                   <button className="hero-btn-resume text-white font-bold py-2 px-4 rounded">
                     Download Resume
                   </button>
