@@ -1,4 +1,4 @@
-import { Raleway } from '@next/font/google';
+import { Raleway } from 'next/font/google';
 import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa";
 

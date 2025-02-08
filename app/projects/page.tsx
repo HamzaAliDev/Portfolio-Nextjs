@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { Raleway, Roboto } from "@next/font/google";
+import { Raleway, Roboto } from "next/font/google";
 import { FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
 import AOS from 'aos';
@@ -10,10 +10,11 @@ import project01 from "../../public/assets/images/proj01.jpg";
 import project02 from "../../public/assets/images/travel.jpg";
 import project03 from "../../public/assets/images/cozera.jpg";
 import project04 from "../../public/assets/images/event.webp";
-import project05 from "../../public/assets/images/postify.avif";
+import project05 from "../../public/assets/images/postify.png";
 import project06 from "../../public/assets/images/todo.jpg";
 import Contact from "@/components/Contact";
 import Modal from "@/components/Modal";
+import Image from "next/image";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -42,7 +43,7 @@ const data = [
     mdescription: "Travel Dot is a dynamic tourist web app that allows users to plan and book their dream tours to international destinations. The app offers a seamless experience for browsing popular tourist spots, booking hotels, and exploring user testimonials and travel blogs for inspiration. Travel Dot aims to simplify travel planning and provide users with all the essential tools for an unforgettable journey.",
     techstack: ["React","sass", "Bootstrap", "Antd", "Firebase", "Authentication"],
     githubUrl: "https://github.com/HamzaAliDev/Travel-Dot.git",
-    url: "working on it",
+    url: "https://dot-tourist-app.web.app/",
   },
   {
     title: "Cozera",
@@ -88,8 +89,8 @@ const data = [
 
 export default function Projects() {
   const [startCount, setStartCount] = useState(false);
-  const countUpSectionRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+  const countUpSectionRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<{
     mtitle: string;
     mdescription: string;
@@ -108,13 +109,16 @@ export default function Projects() {
       { threshold: 0.5 } // Trigger when 30% of the section is visible
     );
 
-    if (countUpSectionRef.current) {
-      observer.observe(countUpSectionRef.current);
+     // Store the current ref value in a local variable
+     const currentRef = countUpSectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (countUpSectionRef.current) {
-        observer.unobserve(countUpSectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -158,7 +162,7 @@ export default function Projects() {
                 Each project reflects my expertise in delivering high-quality results.
               </p>
               <div>
-                <Link href="/resume" passHref>
+                <Link href="/contact" passHref>
                   <button className="hero-btn-resume text-white font-bold py-2 px-5 rounded">
                     Contact Me
                   </button>
@@ -168,7 +172,7 @@ export default function Projects() {
 
             {/* Right Section */}
             <div className="w-full md:w-1/2 flex justify-center items-center relative">
-              <img src={projectPic.src} className="rounded-3xl" alt="about-hero" width={350} />
+              <Image src={projectPic.src} className="rounded-3xl" alt="about-hero" width={350} height={350} />
             </div>
           </div>
         </div>
@@ -210,15 +214,15 @@ export default function Projects() {
         <div data-aos="zoom-in" className="container mx-auto px-4 lg:px-24">
           <div className="flex flex-wrap items-center justify-center">
             <div className="metrics m-5">
-              {startCount && <CountUp end={24} duration={4} className="metric-text" />}
+              {startCount && <CountUp end={24}  className="metric-text" />}
               <p className="text-xl font-semibold">Projects</p>
             </div>
             <div className="metrics m-5">
-              {startCount && <CountUp end={96} duration={4} className="metric-text" suffix="%" />}
+              {startCount && <div className="flex items-baseline justify-center"><CountUp end={96}  className="metric-text"  /><span className="text-custommain">%</span></div>}
               <p className="text-xl font-semibold"> + Feedback</p>
             </div>
             <div className="metrics m-5">
-              {startCount && <CountUp end={10} duration={4} className="metric-text" />}
+              {startCount && <CountUp end={10} className="metric-text" />}
               <p className="text-xl font-semibold">Team Work</p>
             </div>
           </div>

@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import Link from 'next/link';
-import { Raleway, Roboto } from '@next/font/google';
+import { Raleway, Roboto } from 'next/font/google';
 import { HiPaintBrush } from 'react-icons/hi2';
 import { IoDesktopOutline } from 'react-icons/io5';
 import { IoIosArrowRoundForward } from 'react-icons/io';
@@ -19,6 +19,7 @@ import blob5 from '../../public/assets/images/blob5.png';
 import blob6 from '../../public/assets/images/blob6.png';
 import aboutImg from '../../public/assets/images/servicesPic.png';
 import chooseImg from '../../public/assets/images/choose.png';
+import Image, { StaticImageData } from 'next/image';
 
 
 const raleway = Raleway({
@@ -32,7 +33,7 @@ const roboto = Roboto({
 interface ServiceItem {
   title: string;
   description: string;
-  img: any | string;  // Path to the image
+  img: StaticImageData |string;  // Path to the image
   dataIcon: React.ComponentType;  // React component for the icon
 }
 
@@ -86,14 +87,14 @@ export default function Services() {
                 <span className="text-underline ms-2 absolute left-0 bottom-[-4px] rounded  h-1  w-12 transition-all duration-500 group-hover:w-44"></span>
               </h2>
               <p className=' text-center '>
-                <i >"Building the Future of Web and Mobile Development"</i>
+                <i >&quot;Building the Future of Web and Mobile Development&quot;</i>
               </p>
               <p className={`text-lg text-center md:text-left ${roboto.className}`}>
-                I offer a wide range of web and mobile development services tailored to bring your ideas to life. Whether you're looking to build
-                a robust website, an intuitive mobile app, or enhance your digital presence, I'm here to provide innovative, user-centric solutions.
+                I offer a wide range of web and mobile development services tailored to bring your ideas to life. Whether you&apos;re looking to build
+                a robust website, an intuitive mobile app, or enhance your digital presence, I&apos;m here to provide innovative, user-centric solutions.
               </p>
               <div className="">
-                <Link href="/resume" passHref>
+                <Link href="/contact" passHref>
                   <button className="hero-btn-resume text-white font-bold py-2 px-5 rounded">
                     Contact Me
                   </button>
@@ -103,7 +104,7 @@ export default function Services() {
 
             {/* Right section (image with SVG background) */}
             <div className="w-full md:w-1/2 flex justify-center items-center relative">
-              <img src={aboutImg.src} className='rounded-3xl' alt='about-hero' width={350} />
+              <Image src={aboutImg.src} className='rounded-3xl' alt='about-hero' width={350} height={350} />
 
             </div>
           </div>
@@ -128,7 +129,7 @@ export default function Services() {
                     return (
                       <div key={index} className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center service-card "  >
                         <div className="text text-5xl mb-4 blob-background-container">
-                          <div className='blob-background  flex items-center justify-center' style={{ backgroundImage: `url(${item.img.src})` }}>
+                          <div className='blob-background  flex items-center justify-center' style={{ backgroundImage: `url(${typeof item.img === "string" ? item.img : item.img.src})` }}>
                             <item.dataIcon />
                           </div>
 
@@ -263,7 +264,7 @@ export default function Services() {
                   </div>
                 </div>
                 <div className='choose-img-container'>
-                  <img src={chooseImg.src} alt='about-hero' width={350}  className='z-10'/>
+                  <Image src={chooseImg.src} alt='about-hero' width={350} height={350}  className='z-10'/>
                 </div>
               </div>
 

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "aos": "^2.3.4",
     "dotenv": "^16.4.7",
     "firebase": "^11.2.0",

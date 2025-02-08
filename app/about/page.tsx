@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import Link from 'next/link';
 import { FaBookOpen } from 'react-icons/fa';
-import { Roboto, Raleway } from '@next/font/google';
+import { Roboto, Raleway } from 'next/font/google';
 import aboutImg from '../../public/assets/images/about pic.png';
 import missionImg from '../../public/assets/images/mission.png';
 import Contact from '@/components/Contact';
+import Image from 'next/image';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -37,17 +38,17 @@ export default function About() {
                 combine functionality, aesthetics, and seamless user experiences. Problem-solving and transforming ideas into impactful designs are at the core of my passion.
               </p>
               <div className="">
-                <Link href="/resume" passHref>
+                <a href="/resume.pdf" target="_blank" rel="noreferrer">
                   <button className="hero-btn-resume text-white font-bold py-2 px-4 rounded">
                     Download Resume
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
 
             {/* Right section (image with SVG background) */}
             <div className="w-full md:w-1/2 flex justify-center items-center relative">
-              <img src={aboutImg.src} className='rounded-3xl' alt='about-hero' width={350} />
+              <Image src={aboutImg.src} className='rounded-3xl' alt='about-hero' width={350} height={350} />
 
             </div>
           </div>
@@ -116,7 +117,7 @@ export default function About() {
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 space-y-6 md:space-y-0">
             {/* Right section (image with SVG background) */}
             <div className="w-full md:w-1/2 flex justify-center items-center relative">
-              <img src={missionImg.src} className='rounded-3xl' alt='about-hero' width={360} />
+              <Image src={missionImg.src} className='rounded-3xl' alt='about-hero' width={360} height={360} />
 
             </div>
           

@@ -1,7 +1,13 @@
-@import './footer';
-@import './loader';
-@import './navbar';
-@import './servicePage';
+@use "sass:color";
+@use "./footer";
+@use "./loader";
+@use "./navbar";
+@use "./service";
+
+// @import './footer';
+// @import './loader';
+// @import './navbar';
+// @import './servicePage';
 
 $primary: #219ebc;
 $mainColor: #d73e0f;
@@ -32,7 +38,7 @@ $mainColor: #d73e0f;
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: darken($mainColor, 10%);
+        background-color: color.adjust($mainColor, $lightness: -10%);
     }
 }
 
@@ -45,7 +51,7 @@ $mainColor: #d73e0f;
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: darken($primary, 10%);
+        background-color: color.adjust($primary, $lightness: -10%);
     }
 }
 
@@ -281,7 +287,7 @@ $mainColor: #d73e0f;
 
 
 
-.metrics{
+.metrics {
     height: 160px;
     width: 170px;
     border-radius: 10%;
@@ -293,7 +299,8 @@ $mainColor: #d73e0f;
     align-items: center;
 
 }
-.metric-text{
+
+.metric-text {
     font-size: 54px;
     color: $mainColor;
     letter-spacing: 1px;
@@ -305,9 +312,9 @@ $mainColor: #d73e0f;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative; // Ensures child elements can be positioned relative to the card
-  }
-  
-  .project-card-img {
+}
+
+.project-card-img {
     width: 100%;
     height: 220px;
     object-fit: contain;
@@ -315,17 +322,17 @@ $mainColor: #d73e0f;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-  
-  .project-card-content {
+}
+
+.project-card-content {
     position: relative;
     padding: 15px;
     background-color: #fff;
     margin-top: -20px;
     border-radius: 10px;
-  }
-  
-  .project-btn {
+}
+
+.project-btn {
     margin-top: 15px;
     background-color: $mainColor;
     color: white;
@@ -335,11 +342,11 @@ $mainColor: #d73e0f;
     transition: background-color 0.3s ease;
     font-size: 15px;
     // border: 3px solid $mainColor;
-  }
-  
+}
 
-  
-  .card-icon {
+
+
+.card-icon {
     position: absolute; // Allows positioning relative to the parent
     top: 155px; // Position slightly above the .project-card-content
     left: 12px; // Align with the left padding of the content
@@ -350,10 +357,10 @@ $mainColor: #d73e0f;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
+}
 
-  .techstack-badge{
+
+.techstack-badge {
     margin: 3px;
     border: 1px solid $primary;
     border-radius: 10px;
@@ -366,4 +373,4 @@ $mainColor: #d73e0f;
     &:hover {
         transform: scale(1.1); // Slightly zoom in
     }
-  }
+}

@@ -28,11 +28,11 @@ export default function Contact() {
         AOS.init();
       }, []);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setState({ ...state, [e.target.name]: e.target.value });
   }
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     let { name, email, subject, message } = state;
@@ -141,7 +141,7 @@ export default function Contact() {
 
               <form className='bg-white shadow-md  px-8 pt-6 pb-8 mb-20'>
 
-                <h2 className='text-4xl mb-10'>Interested to work together? <br /> Let's talk</h2>
+                <h2 className='text-4xl mb-10'>Interested to work together? <br /> Let&apos;s talk</h2>
 
                 <div className="flex gap-5 mb-4 flex-row inputs-container">
                   <div className="form__group field w-full" >

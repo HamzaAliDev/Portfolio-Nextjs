@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Roboto } from '@next/font/google';
+import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
   subsets: ['latin'],

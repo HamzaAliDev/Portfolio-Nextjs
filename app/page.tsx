@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from "next/image";
-import Link from "next/link";
-import { Roboto, Rubik, Raleway } from '@next/font/google';
+import { Roboto, Rubik, Raleway } from 'next/font/google';
 import { FaCode, FaPaintBrush, FaChartLine, FaEye, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { Typewriter } from 'react-simple-typewriter'
 import profilePic from "../public/assets/images/profile-bg-reomve.png";
@@ -48,7 +47,7 @@ const randomQuotes = [
 ];
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [quote, setQuote] = useState<string | null>(null);
   const [author, setAuthor] = useState<string | null>(null);
 
@@ -76,7 +75,7 @@ export default function Home() {
             {/* Left section (text + buttons) */}
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center space-y-8 lg:px-20">
               <p className={`text-xl hellow-text ${rubik.className}`}>Hello!</p>
-              <h1 className={`text-6xl font-semibold text-center md:text-left ${rubik.className}`}>I'm Ali Hamza</h1>
+              <h1 className={`text-6xl font-semibold text-center md:text-left ${rubik.className}`}>I&apos;m Ali Hamza</h1>
               <p className="type-writer-text text-xl">
                 <i>
                   <Typewriter
@@ -96,11 +95,11 @@ export default function Home() {
                 I design and develop impactful web and mobile solutions with a focus on seamless user experiences and user-centric design.
               </p>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center md:justify-start ">
-                <Link href="/resume.pdf" download="Hamza_Resume.pdf" passHref>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="hero-btn-resume text-white font-bold py-2 px-4 rounded">
                     Download Resume
                   </button>
-                </Link>
+                </a>
                 <button className="hero-btn-quote text-white font-bold py-2 px-4 rounded"
                   onClick={() => {
                     getRandomQuote();
